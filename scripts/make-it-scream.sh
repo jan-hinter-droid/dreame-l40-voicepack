@@ -6,14 +6,18 @@
 set -u
 
 LANG_ID="SCREAMTEST"
-URL="https://raw.githubusercontent.com/jan-hinter-droid/dreame-l40-voicepack/main/dist/screamtest.tar.gz"
-MD5="${1:-}"
-SIZE="${2:-}"
-COUNT="${3:-6}"
-GAP="${4:-6}"
+# Achtung: raw.githubusercontent.com cached aggressiv (auch mit Cache-Buster).
+# jsDelivr liefert den aktuellen Stand und ist zusaetzlich schneller.
+URL="https://cdn.jsdelivr.net/gh/jan-hinter-droid/dreame-l40-voicepack@main/dist/screamtest.tar.gz"
+
+# Werte aus dem Build (koennen oben ersetzt werden)
+MD5="${MD5:-c3b2e03440fe1cf47b8421c662ff8b72}"
+SIZE="${SIZE:-8196176}"
+COUNT="${COUNT:-6}"
+GAP="${GAP:-6}"
 
 if [ -z "$MD5" ] || [ -z "$SIZE" ]; then
-  echo "Aufruf: $0 <md5> <size> [anzahl] [abstand_sekunden]"
+  echo "FEHLER: MD5 und SIZE muessen gesetzt sein."
   exit 1
 fi
 

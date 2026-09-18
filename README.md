@@ -50,6 +50,41 @@ Mit einer eigenen `id` (z. B. `DECUSTOM`) bleiben die Werkssprachpakete unangeta
    IDs ab – die vier reinen Geräusche (0, 200, 274, 488) sind absichtlich nicht enthalten,
    weil sie keinen Text haben und die Werkssignaltöne erhalten bleiben sollen.
 
+6. **`raw.githubusercontent.com` cached aggressiv.** Nach einem Push liefert die Raw-URL
+   minutenlang noch die alte Datei – auch mit Cache-Buster-Query. Der Roboter bekäme dann
+   eine MD5-Abweichung. **Für Installationen `cdn.jsdelivr.net` verwenden:**
+
+   ```
+   https://cdn.jsdelivr.net/gh/<user>/<repo>@main/dist/<paket>.tar.gz
+   ```
+
+   Das liefert sofort den aktuellen Stand und ist zusätzlich schneller.
+7. **Sound-Overrides nicht loudnorm-normalisieren.** Fertige Effekt-Sounds verlieren dabei
+   ihre Dynamik (Pumpen). Der Builder begrenzt Overrides deshalb nur mit `alimiter`,
+   während TTS-Sprache weiterhin normalisiert wird.
+
+## Schrei testen
+
+Sound-ID 40 („steckt fest") ist der Schrei. Der feuert nur, wenn der Roboter wirklich
+festhängt – zum Testen unpraktisch. Deshalb gibt es ein Testpaket, in dem der Befehl
+`locate` den Schrei abspielt (dort ist ID 45 überschrieben). `locate` bewegt den Roboter nicht.
+
+```powershell
+# 1. Testpaket bauen (ID 45 = Schrei) und pushen
+python tools/build_pack.py --csv phrases/de_full.csv --pack screamtest --overrides sounds/overrides-test
+git add -A; git commit -m "Testpaket"; git push
+
+# 2. Auf dem Pi: scripts/scream-timer.sh -> 5 Schreie im 5-Sekunden-Takt
+```
+
+Zurück auf die normale Ansage:
+
+```
+set Dreame_L40 installVoicePack FULLDE|https://cdn.jsdelivr.net/gh/jan-hinter-droid/dreame-l40-voicepack@main/dist/fullde.tar.gz|d92f468e340fd3d0056d06e7f8ad0e6d|8182192
+```
+
+Gemessen: 8,2 MB werden in ~11 s geladen und installiert (`downloading` → `success`).
+
 ## Sound-IDs des L40
 
 Die vollständige Inventur liegt in `reference/sound_inventory.csv` (470 IDs, Union aus
