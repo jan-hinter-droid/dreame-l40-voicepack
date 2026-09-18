@@ -1,0 +1,471 @@
+id;text;note
+0;;
+1;Warte auf die Netzwerkkonfiguration.;Netzwerk-Setup
+2;Keine Verbindung zum WLAN. Bitte prüfe das Passwort und versuche es erneut.;
+3;Keine Verbindung zum Server. Bitte prüfe dein Netzwerk und versuche es erneut.;
+4;Netzwerkkonfiguration beendet.;
+5;Netzwerk verbunden.;
+6;Netzwerkverbindung fehlgeschlagen. Bitte später erneut versuchen.;
+7;Ich fange an zu saugen.;START – Kernansage
+8;Ich starte die Punktreinigung.;
+9;Ich starte die geplante Reinigung.;
+10;Ich setze die Reinigung fort.;
+11;Ich mache kurz Pause.;PAUSE – Kernansage
+12;Fertig, die Reinigung ist abgeschlossen.;FERTIG – Kernansage
+13;Ich fahre zurück zur Station und lade auf.;
+14;Akku schwach. Ich fahre zur Station und mache danach weiter.;
+15;Ich fahre jetzt zum Startpunkt zurück.;
+16;Akku schwach. Ich fahre zum Startpunkt zurück. Bitte lade mich auf.;
+17;Bitte setz mich zum Laden auf die Station.;
+18;Ich lade auf.;
+19;Bitte nimm mich von der Station, bevor du mich ausschaltest.;
+20;Der Akku ist schwach.;
+21;Akku schwach. Ich schalte mich jetzt aus.;
+22;Bitte setz mich in einen Bereich, der gereinigt werden soll.;
+23;Der Wassertank ist eingesetzt.;
+24;Bitte prüfe, ob der Wassertank richtig sitzt.;
+25;Akku zu schwach. Die geplante Reinigung kann ich nicht ausführen.;
+26;Ich setze mich auf die Werkseinstellungen zurück.;
+27;Update läuft, das dauert etwa fünf Minuten. Bitte schalte mich nicht aus und starte keine Reinigung.;
+28;Das Update war erfolgreich.;
+29;Das Update ist fehlgeschlagen. Bitte versuche es erneut.;
+30;Ich positioniere mich, einen Moment bitte.;
+31;Positionierung fehlgeschlagen, die Karte ist ungültig. Ich starte eine neue Reinigung.;
+32;Ich habe Änderungen in der Umgebung erkannt. Bitte starte einen neuen Reinigungsdurchlauf.;
+33;Fehler in der optischen Navigation. Bitte wische den Sensor sauber und starte mich neu.;
+34;Der Staubbehälter fehlt. Bitte setz ihn ein.;
+35;Fehler bei der Hauptbürste. Bitte prüfe und reinige sie.;
+36;Fehler bei der Seitenbürste. Bitte prüfe und reinige sie.;
+37;Fehler am rechten Rad. Bitte prüfe es.;
+38;Fehler am linken Rad. Bitte prüfe es.;
+39;Bitte reinige den Absturzsensor.;
+40;(Schrei - Override aus sounds/overrides/40.ogg);ANGESTOSSEN/FESTGEFAHREN - Michael-Reeves-Gag
+41;Meine Räder hängen in der Luft. Bitte stell mich zurück auf den Boden.;
+42;Bitte prüfe und reinige den Filter.;
+43;Fehler am Stoßsensor. Bitte tippe kurz dagegen, ob er wieder federt.;
+44;Fehler. Bitte schau in die Bedienungsanleitung oder melde dich beim Kundendienst.;
+45;Hier bin ich!;LOCATE – Kernansage
+46;Roboter und Handy sind verbunden. Bitte warte in der App auf das Ergebnis.;
+47;Ich beginne mit dem Laden.;
+48;Akku schwach. Ich fahre zur Station.;
+49;Starkes Magnetfeld erkannt. Bitte stell mich woanders hin und starte neu.;
+50;Ladefehler. Bitte reinige die Ladekontakte.;
+51;Der Akku ist zu warm oder zu kalt. Bitte warte, bis die Temperatur wieder normal ist.;
+52;Ich bin gekippt. Bitte stell mich auf einen ebenen Boden.;
+53;Verbotene Zone erkannt. Bitte stell mich woanders hin und starte neu.;
+54;Positionierung erfolgreich. Ich setze die Reinigung fort.;
+55;Positionierung erfolgreich. Ich fahre weiter zur Station.;
+56;Ich starte die Reinigung der gewählten Räume.;
+57;Ich starte die Zonenreinigung.;
+58;Ich führe die Reinigung aus.;
+59;Wischen abgeschlossen. Bitte nimm den Wassertank rechtzeitig ab.;
+60;Fehler am Optifluss-Sensor. Bitte wische ihn sauber und starte neu.;
+61;Ich fange an zu wischen.;
+62;Ich starte die Fernsteuerungs-Reinigung.;
+63;Der Wassertank wurde entfernt.;
+64;Positionierung fehlgeschlagen, die Karte ist ungültig. Ich fahre zurück zur Station.;
+65;Ich fahre weiter zurück zur Station.;
+66;Der Filter ist verschlissen. Bitte tausche ihn bald aus.;
+67;Die Seitenbürste ist verschlissen. Bitte tausche sie bald aus.;
+68;Die Hauptbürste ist verschlissen. Bitte tausche sie bald aus.;
+69;Der Weg ist blockiert. Bitte setz mich um, dann mache ich weiter.;
+70;Bitte nimm den Wischmopp ab und reinige ihn.;
+71;Fehler am Lasersensor. Bitte prüfe und reinige ihn.;
+72;Bitte prüfe, ob die Abdeckung des Lasersensors klemmt.;
+73;Fehler am Kantensensor. Bitte prüfe und reinige ihn.;
+74;Bitte reinige die Hindernissensoren.;
+75;Der Filter ist vielleicht noch nass oder verstopft.;
+76;Ich starte die Punktreinigung.;
+77;Bitte starte mich nicht auf einem Teppich.;
+78;Bitte reinige den 3D-Hindernissensor.;
+79;Fehler am 3D-Hindernissensor. Bitte starte mich neu oder melde dich beim Kundendienst.;
+80;Der Sender des 3D-Hindernissensors ist defekt. Bitte starte mich neu oder melde dich beim Kundendienst.;
+81;Fehler am Ultraschallsensor. Bitte starte mich neu oder melde dich beim Kundendienst.;
+82;Ich beginne mit dem Kartieren.;
+83;Ich führe die Kartierung aus.;
+84;Die Kartierung ist fertig.;
+85;Positionierung erfolgreich. Ich kartiere weiter.;
+86;Positionierung fehlgeschlagen. Ich starte die Kartierung neu.;
+87;Akku schwach. Ich fahre zur Station.;
+88;Fernsteuerungsmodus aktiv.;
+89;Ich lade weiter auf.;
+90;Ich führe die Reinigung aus.;
+91;Der Frischwassertank fehlt. Bitte setz ihn ein, bevor ich weiterarbeite.;
+92;Der Schmutzwassertank fehlt. Bitte setz ihn ein, bevor ich weiterarbeite.;
+93;Im Frischwassertank ist zu wenig Wasser. Bitte füll nach, bevor ich weiterarbeite.;
+94;Der Schmutzwassertank ist voll. Bitte leer ihn, bevor ich weiterarbeite.;
+95;Die Wischplatte fehlt. Ich kann nicht zur Station zurückfahren.;
+96;Die Wischplatte läuft über. Bitte prüfe, ob der Wasserauslass verstopft ist.;
+97;Der Staubbeutel fehlt. Bitte setz ihn ein, bevor ich weiterarbeite.;
+98;Der Staubbeutel ist voll. Bitte leer ihn.;
+99;Die Abdeckung des Absaugfachs ist offen. Bitte schließe sie, bevor ich weiterarbeite.;
+100;Der Luftkanal des Absaugfachs ist verstopft. Bitte prüfe ihn.;
+101;Die Abdeckung der Absaugstation ist offen oder der Staubbeutel fehlt. Bitte beides prüfen.;
+102;Der Staubbeutel ist voll oder der Luftkanal ist verstopft. Bitte tausche den Beutel oder reinige den Kanal.;
+103;Die Wischplatte ist eingesetzt. Ich arbeite weiter.;
+104;Die Wischplatte fehlt. Bitte setz sie ein und raste beide Seiten fest.;
+105;Ich fange an zu saugen.;
+106;Ich starte die Moppreinigung.;
+107;Ich starte das Trocknen des Mopps.;
+108;Der Wasserstand der Wischplatte ist ungewöhnlich. Bitte reinige sie, damit nichts verstopft.;
+109;Fehler am Schmutzwassertank. Bitte prüfe, ob er richtig sitzt, und leer ihn rechtzeitig.;
+110;Ich starte die automatische Absaugung.;
+111;Die Wischmopps sind ab. Bitte montiere sie, bevor ich weiterarbeite.;
+112;Bitte setz mich vor dem Betrieb auf die Waschstation.;
+113;Aufgabe erledigt. Bitte leer den Abfallbehälter rechtzeitig.;
+114;Die Wischmopps sind montiert.;
+115;Die Wischmopps wurden entfernt.;
+116;Kindersicherung an. Tasten gesperrt.;
+117;Kindersicherung aus. Tasten entsperrt.;
+118;Tasten gesperrt. Halte die Taste an der Station gedrückt zum Entsperren.;
+119;Die Tasten sind gesperrt.;
+120;Die Tasten sind entsperrt.;
+121;Roboter und Handy sind verbunden. Bitte warte in der App auf den Abschluss.;
+122;Ich positioniere laufend, einen Moment bitte.;
+126;Ich fange an zu saugen.;
+127;Ich starte die Punktreinigung.;
+128;Ich starte die Punktwischreinigung.;
+129;Ich starte die geplante Reinigung.;
+130;Ich starte die geplante Wischreinigung.;
+131;Ich starte die Punktreinigung.;
+132;Ich starte die Punktwischreinigung.;
+133;Ich starte die Reinigung der gewählten Räume.;
+134;Ich starte die Wischreinigung der gewählten Räume.;
+135;Ich starte die Zonenreinigung.;
+136;Ich starte die Zonenwischreinigung.;
+137;Ich setze die Reinigung fort.;
+138;Ich setze das Wischen fort.;
+139;Ich setze die Rückfahrt zur Waschstation fort.;
+140;Neue Umgebung erkannt. Ich fahre zurück zur Waschstation.;
+141;Fehler am Wischmopp. Bitte prüfe und reinige ihn.;
+142;Der Wischmopp ist verschlissen. Bitte tausche ihn bald aus.;
+143;Die Reinigung ist abgeschlossen.;FERTIG (Variante)
+144;Das Wischen ist abgeschlossen.;
+145;Positionierung erfolgreich. Ich setze die Reinigung fort.;
+146;Positionierung erfolgreich. Ich setze das Wischen fort.;
+148;Ich fahre zur Waschstation zurück.;
+149;Ich kann den Bereich nicht erreichen. Bitte räum Hindernisse aus dem Weg.;
+150;Ich kann den Bereich nicht erreichen. Bitte lösche Sperrzonen auf dem Weg.;
+151;Der Weg ist blockiert. Bitte räum Hindernisse um mich herum weg.;
+152;Der Weg ist blockiert. Bitte lösche Sperrzonen oder setz mich um.;
+153;Ich stehe in einer Sperrzone. Bitte setz mich aus diesem Bereich heraus.;
+154;Zu viele Befehle in kurzer Zeit. Bitte versuche es später erneut.;
+155;Ich fahre zurück zur Lade- und Waschstation.;
+156;Die Mopphalterung ist nicht eingesetzt.;
+157;Ich bin schon an der Lade- und Waschstation.;
+162;Kamera ist an.;
+163;Kameraüberwachung läuft.;
+164;Aufgabe beendet.;
+166;Bitte entferne die Fremdkörper, die sich im Wischmopp verfangen haben.;
+169;Der Wischmopp ist getrocknet.;
+170;Alle Tasten sind gesperrt. Halte die Tasten an der Station gedrückt zum Entsperren.;
+171;KI-Erkennung ist an.;
+172;KI-Erkennung ist aus.;
+173;Bitte tausche den Silberionen-Sterilisator.;
+177;Ich verlasse die Station.;
+179;Wischmopp gereinigt. Im Frischwassertank ist zu wenig Wasser. Bitte füll nach und leer den Schmutzwassertank.;
+181;Zu wenig Wasser. Bitte füll den Frischwassertank.;
+186;Bitte prüfe den Frischwassertank.;
+187;Das dauert etwa fünf bis zehn Minuten.;
+188;Automatisches Andocken läuft.;
+190;Okay, ich starte die Reinigung.;aus Inventar
+191;Okay, ich starte Saugen und Wischen.;aus Inventar
+192;Okay, ich starte das Wischen.;aus Inventar
+193;Okay, ich starte das Saugen.;aus Inventar
+194;Ich reinige bereits.;aus Inventar
+195;Okay, ich reinige den Raum. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+196;Okay, ich sauge den Boden. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+197;Okay, ich wische den Boden. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+198;Okay, ich sauge und wische den Boden. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+199;Dieser Raum wurde nicht erkannt. Bitte öffne die App und prüfe den Raumnamen.;aus Inventar
+200;;Abschalt-Sound (leer lassen = Werkssound)
+201;Okay, ich arbeite weiter.;aus Inventar
+202;Okay, die Aufgabe ist beendet. Ich fahre zum Laden zurück.;aus Inventar
+203;Okay, ich fahre zum Laden zurück.;aus Inventar
+204;Okay, ich starte die Kartierung. Bitte achte darauf, dass alle Türen offen sind.;aus Inventar
+205;Okay, ich verlasse die Basisstation.;aus Inventar
+206;Okay, ich mache mich auf die Suche.;aus Inventar
+207;Ich kann niemanden finden. Bitte in mein Sichtfeld kommen.;aus Inventar
+208;Gefunden. Ich komme jetzt zum Reinigen.;aus Inventar
+209;Okay, ich fahre zur Basisstation zurück, um den Wischmopp zu reinigen.;aus Inventar
+210;Starte die Wischmopp-Wäsche.;aus Inventar
+211;Die automatische Entleerung ist nur in der Basisstation möglich.;aus Inventar
+212;Okay, ich starte die automatische Entleerung.;aus Inventar
+213;Die Trocknung ist nur in der Basisstation möglich.;aus Inventar
+214;Trocknung läuft.;aus Inventar
+215;Okay, ich starte die Trocknung.;aus Inventar
+216;Bitte setze zuerst den Wischmopp ein.;aus Inventar
+217;Maximale Saugleistung erreicht.;aus Inventar
+218;Minimale Saugleistung erreicht.;aus Inventar
+219;Maximale Feuchtigkeit erreicht.;aus Inventar
+220;Minimale Feuchtigkeit erreicht.;aus Inventar
+221;Okay.;aus Inventar
+222;Saugmodus Leise.;aus Inventar
+223;Saugmodus Standard.;aus Inventar
+224;Saugmodus Stark.;aus Inventar
+225;Saugmodus Turbo.;aus Inventar
+226;Wischmopp leicht trocken.;aus Inventar
+227;Wischmopp feucht.;aus Inventar
+228;Wischmopp nass.;aus Inventar
+229;Heute ist ...;aus Inventar
+230;Heute ist der 21. Februar 2022.;aus Inventar
+231;Heute ist Montag.;aus Inventar
+232;Heute ist Dienstag.;aus Inventar
+233;Heute ist Mittwoch.;aus Inventar
+234;Heute ist Donnerstag.;aus Inventar
+235;Heute ist Freitag.;aus Inventar
+236;Heute ist Samstag.;aus Inventar
+237;Heute ist Sonntag.;aus Inventar
+238;Okay, die Aufgabe ist pausiert.;aus Inventar
+244;Reinigungsmittel eingesetzt.;
+245;Die maximale Anzahl an Karten ist erreicht. Bitte lösche eine Karte und versuche es erneut.;aus Inventar
+246;Ich bin hier.;aus Inventar
+247;Das habe ich nicht verstanden.;aus Inventar
+248;Wischmopp nicht eingesetzt. Bitte setze ihn ein und versuche es erneut.;aus Inventar
+249;Ich arbeite gerade. Bitte beende die laufende Aufgabe und versuche es erneut.;aus Inventar
+250;Der Wischmodus ist aktiv. Bitte wechsle in den Saugmodus oder aktiviere Saugen im Wischmodus.;aus Inventar
+251;Der Saugmodus ist aktiv. Bitte wechsle in den Wischmodus oder aktiviere Saugen im Wischmodus.;aus Inventar
+252;Fertig. Der benutzerdefinierte Reinigungsmodus wurde beendet.;aus Inventar
+253;Maximale Lautstärke erreicht.;aus Inventar
+254;Minimale Lautstärke erreicht.;aus Inventar
+255;Diese Aufgabe ist nur mit aktivierter intelligenter Hindernisvermeidung möglich.;aus Inventar
+257;Kameraüberwachung beendet.;
+258;Positioniert. Ich starte die Rundfahrt.;
+259;Positioniert. Ich fahre zum angegebenen Ziel.;
+260;Positioniert. Ich setze die Rundfahrt fort.;
+261;Positioniert. Ich fahre weiter zum Ziel.;
+262;Die Positionierung ist fehlgeschlagen.;
+263;Bitte entferne die Fremdkörper aus der Hauptbürste. Positioniere mich neu und starte erneut.;
+264;Aufgabe erledigt. Bitte reinige den Staubbehälter und die Wischplatte.;
+266;Bitte tausche das Reinigungsmittel.;
+267;Bitte reinige die Sensoren.;
+269;Bitte versuche es erneut, wenn die aktuelle Aufgabe abgeschlossen ist.;aus Inventar
+274;;Signalton (leer lassen = Werkssound)
+275;Dieser Befehl wird nicht unterstützt. In der App sind weitere Sprachbefehle verfügbar.;aus Inventar
+276;Der Roboter führt diese Aufgabe gerade nicht aus.;aus Inventar
+277;Okay, ich komme und reinige dort.;aus Inventar
+278;Okay, die Trocknung ist beendet.;aus Inventar
+279;Der Roboter saugt gerade. Bitte beende die Aufgabe und versuche es erneut.;aus Inventar
+280;Ich starte die benutzerdefinierte Reinigung.;
+281;Ich sauge gerade ab. Bitte versuche es später erneut.;
+282;Ich reinige gerade den Wischmopp. Bitte versuche es später erneut.;
+283;Ich stehe nicht in der Station. Bitte versuche es später erneut.;
+284;Okay, ich beende die Aufgabe und komme zum Reinigen.;aus Inventar
+285;Bitte bleib einen Moment stehen, während ich die Position erfasse.;aus Inventar
+286;Bitte erstelle zuerst eine Karte und versuche es erneut.;aus Inventar
+287;Okay, Leise-Modus aktiviert.;aus Inventar
+288;Okay, Standard-Modus aktiviert.;aus Inventar
+289;Okay, Stark-Modus aktiviert.;aus Inventar
+290;Okay, Turbo-Modus aktiviert.;aus Inventar
+291;Okay, Modus leicht trocken aktiviert.;aus Inventar
+292;Okay, Nass-Modus aktiviert.;aus Inventar
+293;Anrufe aktiviert.;
+294;Anrufe deaktiviert.;
+296;Fehler am Abwassertank. Bitte prüfe, ob er voll ist.;aus Inventar
+297;Reinigungsmittel-Flasche eingesetzt. Falls das Reinigungsmittel noch nie verwendet wurde, bitte in der App zurücksetzen.;aus Inventar
+298;Die Selbstreinigung der Basisstation startet. Bitte reinige das Innere mit einer Bürste oder einem Tuch. Nach 3 Minuten wird das Abwasser im Waschbrett abgepumpt.;aus Inventar
+299;Reinigungsmittel-Flasche und Dosier-Modul eingesetzt.;aus Inventar
+300;Der Roboter unterstützt dieses Zubehör nicht.;aus Inventar
+301;Ich lade gerade.;aus Inventar
+302;Ich arbeite gerade.;aus Inventar
+303;Ich döse gerade vor mich hin.;aus Inventar
+304;Netzwerk verbunden.;aus Inventar
+305;Okay, ich starte die Reinigung der Waschbrett-Basis. Bitte reinige das Innere mit einer Bürste oder einem Tuch. Nach drei Minuten wird das Abwasser abgepumpt.;aus Inventar
+306;Das habe ich nicht verstanden. Bitte konfiguriere das Netzwerk und versuche es erneut.;aus Inventar
+307;Ich lade gerade.;aus Inventar
+308;Das habe ich nicht mitbekommen. Bitte wecke mich erneut und versuche es noch einmal.;aus Inventar
+309;Gefunden. Ich komme.;aus Inventar
+310;Okay, ich verlasse diesen Bereich sofort.;aus Inventar
+312;Nutzungsdaten für dieses Zubehör sind nicht verfügbar. Bitte tausche es nach Bedarf aus.;aus Inventar
+313;Die Netzwerkverbindung ist schlecht. Bitte stelle mich an einen Ort mit besserem Empfang.;aus Inventar
+314;Nicht unterstützt. Ich kann mich aber auf Befehl umdrehen.;aus Inventar
+315;Der Wischmopp ist nicht in der Basisstation. Bitte lege ihn hinein und versuche es erneut.;aus Inventar
+317;Nicht möglich, der Roboter führt die benutzerdefinierte Reinigung aus. Bitte bearbeite sie in der App.;aus Inventar
+318;Aufgabe abgeschlossen.;aus Inventar
+321;Starte die intensive Fleckenreinigung.;aus Inventar
+322;Das habe ich nicht verstanden. In der App sind alle verfügbaren Sprachbefehle aufgelistet.;aus Inventar
+323;Das habe ich nicht verstanden. Sage Hi Dream, was kannst du, um alle meine Funktionen kennenzulernen.;aus Inventar
+324;Ich wasche gerade den Wischmopp. Bitte wecke mich, wenn der Waschvorgang beendet ist.;aus Inventar
+328;Dieser Befehl ist nur während der Reinigung möglich.;aus Inventar
+329;Selbsttest startet. Bitte bewege mich nicht von der Basisstation weg.;aus Inventar
+330;Bitte versuche es nach Abschluss des Selbsttests erneut.;aus Inventar
+331;Kein Fehler gefunden. Das Gerät kann bedenkenlos verwendet werden.;aus Inventar
+332;Ein Fehler wurde gefunden. Weitere Details zeigt die App.;aus Inventar
+338;Videoanruf verbunden.;aus Inventar
+339;Anruf abgelehnt.;aus Inventar
+340;Keine Antwort.;aus Inventar
+344;Okay, ich wische nach dem Saugen.;aus Inventar
+346;Das ist die Absaugstation. Bis zum nächsten Mal.;aus Inventar
+356;Der Fehler besteht weiterhin. Die geplante Aufgabe wurde abgebrochen.;aus Inventar
+360;Der Wassertank des Roboters wird entleert.;aus Inventar
+361;Wassertank-Entleerung abgeschlossen.;aus Inventar
+363;Saugvorgang abgeschlossen. Ich starte jetzt das Wischen.;aus Inventar
+364;Starte die Einrichtung des Video-Aktivierungscodes.;aus Inventar
+365;Die Live-Video-Funktion wurde deaktiviert.;aus Inventar
+366;Fleck erkannt. Ich starte die Reinigung.;aus Inventar
+367;Okay, ich starte die Fleckenreinigung.;aus Inventar
+368;Fleck erkannt. Ich reinige ihn nach dem Wischmopp-Waschen.;aus Inventar
+369;Okay, ich starte die Punktreinigung.;aus Inventar
+371;Bitte nimm das Waschbrett heraus.;aus Inventar
+372;Frischwasser läuft ein.;aus Inventar
+373;Frischwasser-Einlauf beendet. Bitte warte 10 Sekunden und reinige dann die Basisstation, nachdem der Schmutz eingeweicht ist.;aus Inventar
+374;Bitte reinige den Boden der Basisstation innerhalb von 20 Sekunden mit einer Bürste oder einem Tuch. Danach wird das Abwasser automatisch abgepumpt.;aus Inventar
+375;Bitte schiebe den Schmutz zum Ablauf. Das Abpumpen dauert 30 Sekunden.;aus Inventar
+376;Abpumpen beendet. Bitte reinige das Waschbrett separat und setze es wieder ein.;aus Inventar
+377;Netzwerkkonfiguration nicht möglich. Bitte kontaktiere den Kundendienst.;aus Inventar
+378;Falsches Passwort. Die Netzwerkverbindung ist fehlgeschlagen. Bitte konfiguriere das Netzwerk neu.;aus Inventar
+379;Kein WLAN-Netz gefunden. Bitte das 2,4-GHz-WLAN nutzen und den Roboter nahe am Router aufstellen.;aus Inventar
+380;IP-Adresse konnte nicht abgerufen werden. Bitte prüfe die Router-Einstellungen.;aus Inventar
+381;Verbindung zum EMQ-Server fehlgeschlagen. Bitte kontaktiere den Kundendienst.;aus Inventar
+382;Netzwerkverbindung fehlgeschlagen. Bitte prüfe, ob das Netzwerk einwandfrei funktioniert.;aus Inventar
+383;Netzwerkkonfiguration nicht möglich. Bitte kontaktiere den Kundendienst.;aus Inventar
+384;Kein Wasser im Frischwassertank der automatischen Wasserzu- und -abfuhr.;aus Inventar
+385;Ich stelle jetzt die Netzwerkverbindung her.;aus Inventar
+388;Verborgener Bereich. Bitte stelle den Roboter in einen zugänglichen Bereich und versuche es erneut.;aus Inventar
+392;Im Clean-Genius-Modus können die Reinigungsparameter nicht geändert werden.;aus Inventar
+396;Ich starte die Entleerung des Wasserzu- und -abfuhrmoduls. Das dauert etwa drei Minuten.;aus Inventar
+397;Wasserzu- und -abfuhr abgeschlossen.;aus Inventar
+426;Ich bin ins Rutschen geraten und stecke fest. Ich versuche weiter, mich zu befreien.;aus Inventar
+433;Starte die zusätzliche Reinigung.;aus Inventar
+434;Zusätzliche Reinigung abgeschlossen. Die ursprüngliche Aufgabe wird fortgesetzt.;aus Inventar
+435;Ich verlasse den aktuellen Bereich.;aus Inventar
+440;Die Räder haben keinen Bodenkontakt. Bitte setze den Roboter auf eine freie Fläche und starte die Aufgabe neu.;aus Inventar
+441;Die Hauptbürste ist verwickelt. Bitte nimm sie heraus, reinige sie und setze sie wieder ein.;aus Inventar
+442;Die Seitenbürste ist verwickelt. Bitte nimm sie heraus, reinige sie und setze sie wieder ein.;aus Inventar
+444;Bitte stelle den Roboter vor dem Start auf eine freie Fläche.;aus Inventar
+445;Der Wischmopp ist abgefallen. Bitte suche ihn in der Nähe des Roboters und setze ihn wieder ein.;aus Inventar
+447;Die Basisstation hat keinen Strom. Bitte prüfe die Stromversorgung und setze den Roboter zum Laden zurück.;aus Inventar
+451;In einem verborgenen Bereich kann keine Aufgabe gestartet werden. Bitte stelle den Roboter in einen anderen Bereich und starte die Aufgabe neu.;aus Inventar
+460;Der Geruchsneutralisator des Abwassertanks ist verbraucht. Bitte tausche ihn rechtzeitig aus.;aus Inventar
+488;;Geraeusch - Werkssound (kein TTS)
+489;Der Clean-Genius-Modus ist aktiv. Bitte sage mir, dass ich die Aufgabe beenden soll, und versuche es erneut.;aus Inventar
+490;Okay, benutzerdefinierter Reinigungsmodus. Ich starte das Wischen.;aus Inventar
+491;Okay, benutzerdefinierter Reinigungsmodus. Ich starte das Saugen.;aus Inventar
+492;Okay, ich reinige das Wohnzimmer. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+493;Okay, ich reinige das Schlafzimmer. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+494;Okay, ich reinige das Hauptschlafzimmer. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+495;Okay, ich reinige das Gästezimmer. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+496;Okay, ich reinige das Arbeitszimmer. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+497;Okay, ich reinige die Küche. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+498;Okay, ich reinige das Esszimmer. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+499;Okay, ich reinige das Badezimmer. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+500;Okay, ich reinige den Balkon. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+501;Okay, ich reinige den Flur. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+502;Okay, ich reinige den Hauswirtschaftsraum. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+503;Okay, ich reinige den Abstellraum. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+504;Okay, ich reinige den Salon. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+505;Okay, ich reinige das Büro. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+506;Okay, ich reinige den Fitnessraum. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+507;Okay, ich reinige den Freizeitbereich. Bitte achte darauf, dass die Tür offen ist.;aus Inventar
+508;Okay, ich habe die Lautstärke erhöht.;aus Inventar
+509;Okay, ich habe die Lautstärke verringert.;aus Inventar
+510;Okay, ich habe die Arbeit beendet.;aus Inventar
+511;Ich führe gerade keine Aufgabe aus.;aus Inventar
+512;Die Karte enthält noch keine Haustier-Möbel. Bitte füge sie in der App hinzu.;aus Inventar
+513;Okay, ich reinige rund um die Haustier-Möbel.;aus Inventar
+516;Starte die Haustiersuche.;aus Inventar
+517;Haustiere gefunden. Ich fahre zum Laden zurück.;aus Inventar
+518;Keine Haustiere gefunden. Ich fahre zum Laden zurück.;aus Inventar
+526;Akkustand 100 Prozent.;aus Inventar
+527;Akkustand 99 Prozent.;aus Inventar
+528;Akkustand 98 Prozent.;aus Inventar
+529;Akkustand 97 Prozent.;aus Inventar
+530;Akkustand 96 Prozent.;aus Inventar
+531;Akkustand 95 Prozent.;aus Inventar
+532;Akkustand 94 Prozent.;aus Inventar
+533;Akkustand 93 Prozent.;aus Inventar
+534;Akkustand 92 Prozent.;aus Inventar
+535;Akkustand 91 Prozent.;aus Inventar
+536;Akkustand 90 Prozent.;aus Inventar
+537;Akkustand 89 Prozent.;aus Inventar
+538;Akkustand 88 Prozent.;aus Inventar
+539;Akkustand 87 Prozent.;aus Inventar
+540;Akkustand 86 Prozent.;aus Inventar
+541;Akkustand 85 Prozent.;aus Inventar
+542;Akkustand 84 Prozent.;aus Inventar
+543;Akkustand 83 Prozent.;aus Inventar
+544;Akkustand 82 Prozent.;aus Inventar
+545;Akkustand 81 Prozent.;aus Inventar
+546;Akkustand 80 Prozent.;aus Inventar
+547;Akkustand 79 Prozent.;aus Inventar
+548;Akkustand 78 Prozent.;aus Inventar
+549;Akkustand 77 Prozent.;aus Inventar
+550;Akkustand 76 Prozent.;aus Inventar
+551;Akkustand 75 Prozent.;aus Inventar
+552;Akkustand 74 Prozent.;aus Inventar
+553;Akkustand 73 Prozent.;aus Inventar
+554;Akkustand 72 Prozent.;aus Inventar
+555;Akkustand 71 Prozent.;aus Inventar
+556;Akkustand 70 Prozent.;aus Inventar
+557;Akkustand 69 Prozent.;aus Inventar
+558;Akkustand 68 Prozent.;aus Inventar
+559;Akkustand 67 Prozent.;aus Inventar
+560;Akkustand 66 Prozent.;aus Inventar
+561;Akkustand 65 Prozent.;aus Inventar
+562;Akkustand 64 Prozent.;aus Inventar
+563;Akkustand 63 Prozent.;aus Inventar
+564;Akkustand 62 Prozent.;aus Inventar
+565;Akkustand 61 Prozent.;aus Inventar
+566;Akkustand 60 Prozent.;aus Inventar
+567;Akkustand 59 Prozent.;aus Inventar
+568;Akkustand 58 Prozent.;aus Inventar
+569;Akkustand 57 Prozent.;aus Inventar
+570;Akkustand 56 Prozent.;aus Inventar
+571;Akkustand 55 Prozent.;aus Inventar
+572;Akkustand 54 Prozent.;aus Inventar
+573;Akkustand 53 Prozent.;aus Inventar
+574;Akkustand 52 Prozent.;aus Inventar
+575;Akkustand 51 Prozent.;aus Inventar
+576;Akkustand 50 Prozent.;aus Inventar
+577;Akkustand 49 Prozent.;aus Inventar
+578;Akkustand 48 Prozent.;aus Inventar
+579;Akkustand 47 Prozent.;aus Inventar
+580;Akkustand 46 Prozent.;aus Inventar
+581;Akkustand 45 Prozent.;aus Inventar
+582;Akkustand 44 Prozent.;aus Inventar
+583;Akkustand 43 Prozent.;aus Inventar
+584;Akkustand 42 Prozent.;aus Inventar
+585;Akkustand 41 Prozent.;aus Inventar
+586;Akkustand 40 Prozent.;aus Inventar
+587;Akkustand 39 Prozent.;aus Inventar
+588;Akkustand 38 Prozent.;aus Inventar
+589;Akkustand 37 Prozent.;aus Inventar
+590;Akkustand 36 Prozent.;aus Inventar
+591;Akkustand 35 Prozent.;aus Inventar
+592;Akkustand 34 Prozent.;aus Inventar
+593;Akkustand 33 Prozent.;aus Inventar
+594;Akkustand 32 Prozent.;aus Inventar
+595;Akkustand 31 Prozent.;aus Inventar
+596;Akkustand 30 Prozent.;aus Inventar
+597;Akkustand 29 Prozent.;aus Inventar
+598;Akkustand 28 Prozent.;aus Inventar
+599;Akkustand 27 Prozent.;aus Inventar
+600;Akkustand 26 Prozent.;aus Inventar
+601;Akkustand 25 Prozent.;aus Inventar
+602;Akkustand 24 Prozent.;aus Inventar
+603;Akkustand 23 Prozent.;aus Inventar
+604;Akkustand 22 Prozent.;aus Inventar
+605;Akkustand 21 Prozent.;aus Inventar
+606;Akkustand 20 Prozent.;aus Inventar
+607;Akkustand 19 Prozent.;aus Inventar
+608;Akkustand 18 Prozent.;aus Inventar
+609;Akkustand 17 Prozent.;aus Inventar
+610;Akkustand 16 Prozent.;aus Inventar
+611;Akkustand 15 Prozent.;aus Inventar
+612;Akkustand 14 Prozent.;aus Inventar
+613;Akkustand 13 Prozent.;aus Inventar
+614;Akkustand 12 Prozent.;aus Inventar
+615;Akkustand 11 Prozent.;aus Inventar
+616;Akkustand 10 Prozent.;aus Inventar
+617;Akkustand 9 Prozent.;aus Inventar
+618;Akkustand 8 Prozent.;aus Inventar
+619;Akkustand 7 Prozent.;aus Inventar
+620;Akkustand 6 Prozent.;aus Inventar
+621;Akkustand 5 Prozent.;aus Inventar
+622;Akkustand 4 Prozent.;aus Inventar
+623;Akkustand 3 Prozent.;aus Inventar
+624;Akkustand 2 Prozent.;aus Inventar
+625;Akkustand 1 Prozent.;aus Inventar
+626;Akkustand 0 Prozent.;aus Inventar
+636;Der Wischmopp ist schmutzig. Bitte stelle den Roboter zur automatischen Mopp-Wäsche in die Basisstation.;aus Inventar
+638;Setze die automatische Entleerung fort.;aus Inventar
