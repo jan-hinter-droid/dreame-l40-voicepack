@@ -75,23 +75,36 @@ Es gibt fertige Sprachpakete für Dreame-Roboter, die auf dem L40 laufen. Die Pa
 sind die beste Wahl: **417 Sound-IDs** (Bereich 1–638), kein Beifang, und sie liegen bereits
 im passenden Profil `vorbis, 16 kHz, mono` vor.
 
-| Kurzname | Charakter | IDs | Herkunft |
-|---|---|---|---|
-| `gordon` | Gordon Ramsay – wütender Chef | 417 | willemcvu |
-| `fullde` | Deutsch, eigene Ansagen | 466 | dieses Repo |
-| `decustom` | Deutsch, kurze Fassung (185 Kernansagen) | 185 | dieses Repo |
-| `screamtest` | Testpaket: `locate` spielt den Schrei | 466 | dieses Repo |
-| `factoryde` | Werksstimme Deutsch (Rollback) | 515 | Dreame |
+| Kurzname | Charakter | IDs | Abdeckung | Herkunft |
+|---|---|---|---|---|
+| `gordon` | Gordon Ramsay – wütender Chef | 417 | 89 % | willemcvu |
+| `dalek` | Dalek – „EXTERMINATE!" | 417 | 89 % | willemcvu |
+| `bobross` | Bob Ross – ganz entspannt | 417 | 89 % | willemcvu |
+| `jarvis` | JARVIS – vornehmer Butler | 417 | 89 % | willemcvu |
+| `c3po` | C-3PO – nervöser Droide | 417 | 89 % | willemcvu |
+| `djcatnip` | DJ Catnip – Katzen-DJ | 417 | 89 % | willemcvu |
+| `bertram` | Bertram – sarkastischer Butler | 417 | 89 % | willemcvu |
+| `fullde` | Deutsch, eigene Ansagen | 466 | 99 % | dieses Repo |
+| `decustom` | Deutsch, kurze Fassung | 185 | 39 % | dieses Repo |
+| `memes` | Meme-Sounds | 48 | 10 % | n15c |
+| `screamtest` | Testpaket: `locate` spielt den Schrei | 466 | 99 % | dieses Repo |
+| `factoryde` | Werksstimme Deutsch (Rollback) | 515 | 100 % | Dreame |
 
-Weitere verfügbare Charakter-Packs (noch nicht eingetragen, per `installVoicePack` nutzbar):
-JARVIS, C-3PO, Bob Ross, Dalek, DJ Catnip, Bertram – alle 417 IDs. Dazu GLaDOS (188) und
-Gandalf (154, auf dem L40 Ultra AE verifiziert, enthält aber macOS-Metadaten im Archiv).
+Abdeckung = Anteil der 470 bekannten Sound-IDs. **Je höher, desto weniger bleibt stumm** –
+fehlende IDs spielt der Roboter nicht ab, weil die Werksdateien nicht auf dem Gerät liegen.
+
+Nicht übernommen, obwohl verfügbar: **R2-D2** und **GLaDOS** aus
+[n15c/voicepacks_dreame](https://github.com/n15c/voicepacks_dreame) (nur 155 IDs = 32 %,
+R2-D2 zusätzlich 18 MB). Ebenfalls nicht übernommen: Gandalf (154 IDs, mit macOS-Metadaten
+im Archiv) und die russischsprachigen Packs aus
+[RoboVoice](https://github.com/SashaEee/Trouver_audio_install).
 
 Prüfen bzw. bereitstellen:
 
 ```powershell
 python tools/discover_packs.py                     # alle bekannten Packs pruefen
 python tools/fetch_pack.py <name> <url>            # laden, bereinigen, nach dist/ legen
+python tools/pack_from_dir.py <ordner> <name>      # aus ogg/mp3-Ordner ein Paket bauen
 ```
 
 ## Sprachpaket umschalten
