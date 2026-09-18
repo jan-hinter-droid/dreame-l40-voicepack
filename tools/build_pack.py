@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Baut ein Dreame-Sprachpaket (tar.gz mit Ogg-Vorbis, mono 16 kHz) aus einer
 Text-Tabelle und liefert MD5 + Groesse fuer den Install-Befehl.
@@ -92,12 +92,19 @@ def synth_tts(rows: list[tuple[int, str]], wav_dir: Path, voice: str) -> None:
     )
 
 
-def encode(src_wav: Path, dst_ogg: Path) -> None:
-    """Resample + Loudness-Normalisierung + Vorbis-Encoding in einem ffmpeg-Lauf."""
+def encode(src: Path, dst_ogg: Path, *, loudnorm: bool = True) -> None:
+    """Resample + Vorbis-Encoding in einem ffmpeg-Lauf.
+
+    loudnorm=True  -> Loudness-Normalisierung, fuer TTS-Sprache gedacht.
+    loudnorm=False -> nur sanfte Spitzenbegrenzung. Fuer fertige Sound-Overrides:
+                      Loudnorm wuerde deren Dynamik veraendern (Pumpen bei kurzen
+                      Effekten), deshalb bleiben sie unangetastet.
+    """
+    filters = LOUDNORM if loudnorm else "alimiter=limit=0.97"
     cmd = [
         tool("ffmpeg"), "-hide_banner", "-loglevel", "error", "-y",
-        "-i", str(src_wav),
-        "-af", LOUDNORM,
+        "-i", str(src),
+        "-af", filters,
         "-ar", str(SAMPLE_RATE),
         "-ac", str(CHANNELS),
         "-c:a", "libvorbis",
@@ -193,9 +200,10 @@ def main() -> None:
         for sid, _ in tts_rows:
             encode(wav_dir / f"{sid}.wav", ogg_dir / f"{sid}.ogg")
 
-        # Overrides muessen auf dasselbe Profil gebracht werden
+        # Overrides muessen auf dasselbe Profil, aber ohne Loudnorm:
+        # sie sind bereits fertig abgemischt.
         for sid, src in overrides.items():
-            encode(src, ogg_dir / f"{sid}.ogg")
+            encode(src, ogg_dir / f"{sid}.ogg", loudnorm=False)
 
         tar_path = out_dir / f"{args.pack}.tar.gz"
         build_tar(ogg_dir, tar_path)
