@@ -1,0 +1,18 @@
+# Upstream-Quellcode der dreame-vacuum-Integration - nur lokal als Referenz,
+# nicht Teil dieses Repos (fremdes Projekt, eigene Lizenz).
+upstream/
+reference/
+
+# Python
+__pycache__/
+*.pyc
+
+# Zwischendateien des Builds
+_tts_test.wav
+_verify/
+tools/dist/
+*.wav
+
+# Windows
+Thumbs.db
+desktop.ini
