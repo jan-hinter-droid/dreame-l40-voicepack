@@ -1,0 +1,16 @@
+{
+  "_zweck": "Demo-Paket: legt Gordons frechste Sprueche auf die Ereignisse, die per FHEM auslosbar sind.",
+  "_basis": "gordonnorm.tar.gz (loudness-normalisiert)",
+  "_slots": {
+    "45": "locate  - kann ich jederzeit ausloesen",
+    "11": "pause   - kann ich jederzeit ausloesen",
+    "10": "resume  - kann ich jederzeit ausloesen",
+    "7":  "start   - loest eine Reinigung aus",
+    "12": "fertig"
+  },
+  "45": "45.ogg",
+  "11": "238.ogg",
+  "10": "190.ogg",
+  "12": "143.ogg",
+  "7":  "7.ogg"
+}
