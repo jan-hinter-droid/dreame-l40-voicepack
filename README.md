@@ -67,6 +67,13 @@ Mit einer eigenen `id` (z. B. `DECUSTOM`) bleiben die Werkssprachpakete unangeta
 7. **Sound-Overrides nicht loudnorm-normalisieren.** Fertige Effekt-Sounds verlieren dabei
    ihre Dynamik (Pumpen). Der Builder begrenzt Overrides deshalb nur mit `alimiter`,
    während TTS-Sprache weiterhin normalisiert wird.
+8. **Das Polling nach einer Installation darf den Worker nicht blockieren.** Die erste
+   Fassung von `install_voice_pack` verfolgte den Fortschritt bis zu 240 s und wartete dabei
+   auf `state == "success"` im internen Zustand. Wurde der nicht aktualisiert, verarbeitete
+   die Bridge **keine weiteren Befehle** mehr – sie sendete weiter Status, wirkte also
+   lebendig, reagierte aber nicht. Behoben in `patch_bridge_v6_nonblocking.py`: Abbruch
+   zusätzlich bei erreichter Ziel-ID, Backoff, harte Grenze 75 s, Zeitablauf wird geloggt.
+   Ein Wechsel dauert real 5–6 s.
 
 ## Fertige Community-Packs (englisch)
 
@@ -261,10 +268,15 @@ Paket unter `.../resources/<md5>` – **ohne Sprachcode im Pfad**; das alte Sche
 | `patch_bridge_v2.py` | prüft `lang_id`, sichert das Host-Präfix, verfolgt den Fortschritt |
 | `patch_bridge_v3.py` | erlaubt zusätzlich das FHEM-taugliche Pipe-Format |
 | `patch_bridge_v4.py` | ergänzt den Befehl `volume 0..10` |
-| `patch_fhem_setlist.py` | trägt die Befehle `installVoicePack` und `voiceStatus` in die `setList` ein |
+| `patch_bridge_v5_registry.py` | Befehl `voicepack <name>` mit Registry-Kurznamen |
+| `patch_bridge_v6_nonblocking.py` | **Pflicht:** verhindert, dass das Installations-Polling den Command-Worker blockiert |
+| `patch_fhem_setlist.py` | trägt `installVoicePack` und `voiceStatus` in die `setList` ein |
 | `patch_fhem_volume.py` | trägt `volume:0..10` in die `setList` ein |
+| `patch_fhem_voicepack.py` | trägt `voicepack` in die `setList` ein |
+| `patch_fhem_voicepack_list.py` | aktualisiert die Auswahl der Kurznamen |
+| `write_registry.py` | schreibt `/home/pi/voicepacks.json` mit allen Packs |
 
-Bridge-Version nach allen Patches: `3.6-voicepack-fhem`.
+Bridge-Version nach allen Patches: `3.8-voicepack-nonblocking`.
 Nach jedem Patch `sudo systemctl restart dreame-fhem.service`, nach den FHEM-Patches
 zusätzlich `rereadcfg` in FHEM.
 
