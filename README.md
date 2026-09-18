@@ -63,6 +63,49 @@ Mit einer eigenen `id` (z. B. `DECUSTOM`) bleiben die Werkssprachpakete unangeta
    ihre Dynamik (Pumpen). Der Builder begrenzt Overrides deshalb nur mit `alimiter`,
    während TTS-Sprache weiterhin normalisiert wird.
 
+## Fertige Community-Packs (englisch)
+
+Es gibt fertige Sprachpakete für Dreame-Roboter, die auf dem L40 laufen. Die Packs von
+[willemcvu/valetudo-dreame-voicepacks](https://github.com/willemcvu/c3po-valetudo-voicepack)
+sind die beste Wahl: **417 Sound-IDs** (Bereich 1–638), kein Beifang, und sie liegen bereits
+im passenden Profil `vorbis, 16 kHz, mono` vor.
+
+| Kurzname | Charakter | IDs | Herkunft |
+|---|---|---|---|
+| `gordon` | Gordon Ramsay – wütender Chef | 417 | willemcvu |
+| `fullde` | Deutsch, eigene Ansagen | 466 | dieses Repo |
+| `decustom` | Deutsch, kurze Fassung (185 Kernansagen) | 185 | dieses Repo |
+| `screamtest` | Testpaket: `locate` spielt den Schrei | 466 | dieses Repo |
+| `factoryde` | Werksstimme Deutsch (Rollback) | 515 | Dreame |
+
+Weitere verfügbare Charakter-Packs (noch nicht eingetragen, per `installVoicePack` nutzbar):
+JARVIS, C-3PO, Bob Ross, Dalek, DJ Catnip, Bertram – alle 417 IDs. Dazu GLaDOS (188) und
+Gandalf (154, auf dem L40 Ultra AE verifiziert, enthält aber macOS-Metadaten im Archiv).
+
+Prüfen bzw. bereitstellen:
+
+```powershell
+python tools/discover_packs.py                     # alle bekannten Packs pruefen
+python tools/fetch_pack.py <name> <url>            # laden, bereinigen, nach dist/ legen
+```
+
+## Sprachpaket umschalten
+
+Die Bridge kennt Kurznamen aus `/home/pi/voicepacks.json`. Damit ist das Umschalten ein
+Einzeiler – in FHEM:
+
+```
+set Dreame_L40 voicepack list
+set Dreame_L40 voicepack gordon
+set Dreame_L40 voicepack fullde
+set Dreame_L40 voicepack factoryde
+```
+
+Ein neues Pack eintragen: Eintrag in `/home/pi/voicepacks.json` ergänzen (Name, `lang_id`,
+`url`, `md5`, `size`) – die Bridge liest die Datei bei jeder Änderung neu ein, kein Neustart
+nötig. Den Kurznamen danach in `patch_fhem_voicepack.py` in die `setList`-Auswahl aufnehmen
+und `rereadcfg` ausführen.
+
 ## Schrei testen
 
 Sound-ID 40 („steckt fest") ist der Schrei. Der feuert nur, wenn der Roboter wirklich
