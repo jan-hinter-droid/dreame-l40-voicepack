@@ -9,10 +9,12 @@ Dreame-Cloud-API. Der Roboter lädt das Paket selbst herunter, prüft die MD5 un
 
 | Was | Wert |
 |---|---|
-| Aktives Sprachpaket | `DECUSTOM` (185 deutsche Ansagen) |
-| Installationsdauer | ~5 Sekunden nach dem Befehl |
-| Fortschrittsmeldung | `VOICE_CHANGE_STATUS`: `state=success`, `progress=100` |
+| Aktives Sprachpaket | `FULLDE` (466 deutsche Ansagen) |
+| Installationsdauer | ~16 Sekunden nach dem Befehl (8,2 MB) |
+| Fortschrittsmeldung | `VOICE_CHANGE_STATUS`: `state=downloading` → `state=success`, `progress=100` |
 | Schrei bei „steckt fest" | Sound-ID 40 (CC0-Wilhelm-Scream, pitch-verschoben) |
+| Lautstärke | 10 von 10 |
+| Rollback-Ziel | offizielles DE-Paket, URL siehe unten (verifiziert) |
 
 ## Wie es funktioniert
 
@@ -44,7 +46,29 @@ Mit einer eigenen `id` (z. B. `DECUSTOM`) bleiben die Werkssprachpakete unangeta
    quittiert das Gerät mit `code -1` (Rate-Limit). Die Bridge wartet deshalb 5 s pro Statusabfrage.
 5. **Das Paket ist eine Ergänzung, keine Vollabdeckung.** Fehlt eine Sound-ID im Archiv,
    spielt der Roboter für diese Ansage nichts ab. Die Werksdateien liegen nicht auf dem Gerät,
-   sie werden bei Bedarf nachgeladen.
+   sie werden bei Bedarf nachgeladen. Das ausgelieferte `fullde` deckt 466 der 470 bekannten
+   IDs ab – die vier reinen Geräusche (0, 200, 274, 488) sind absichtlich nicht enthalten,
+   weil sie keinen Text haben und die Werkssignaltöne erhalten bleiben sollen.
+
+## Sound-IDs des L40
+
+Die vollständige Inventur liegt in `reference/sound_inventory.csv` (470 IDs, Union aus
+[ccoors/dreame_voice_packs](https://github.com/ccoors/dreame_voice_packs) und
+[willemcvu/valetudo-dreame-voicepacks](https://github.com/willemcvu/c3po-valetudo-voicepack)).
+Das offizielle deutsche Werkspaket für `dreame.vacuum.r2492j` enthält 515 OGG-Dateien –
+es ist damit die vollständigste verfügbare Referenz für die tatsächlich belegten IDs.
+
+Besonders relevant für eigene Anpassungen:
+
+| ID | Original | Bedeutung |
+|---|---|---|
+| 7 | Start cleaning | Start der Reinigung |
+| 11 | Paused | Pause |
+| 12 / 143 | Cleaning task completed | Fertig |
+| 40 | Robot stuck | **steckt fest – hier sitzt der Schrei** |
+| 45 | I am here | Antwort auf `locate` |
+| 57 | Start zoned cleaning | Bereichsreinigung |
+| 110 | Start auto empty | Absaugen |
 
 ## Paket bauen
 
@@ -75,16 +99,17 @@ git add -A; git commit -m "Paket aktualisiert"; git push
 2. In FHEM absetzen (die Befehle sind in der `setList` von `Dreame_L40` eingetragen):
 
 ```
-set Dreame_L40 installVoicePack DECUSTOM|https://raw.githubusercontent.com/jan-hinter-droid/dreame-l40-voicepack/main/dist/decustom.tar.gz|421d6637e5a256ab5992e8a4d4a73398|3213752
+set Dreame_L40 installVoicePack FULLDE|https://raw.githubusercontent.com/jan-hinter-droid/dreame-l40-voicepack/main/dist/fullde.tar.gz|d92f468e340fd3d0056d06e7f8ad0e6d|8182192
 ```
 
-3. Status prüfen:
+3. Status und Lautstärke prüfen:
 
 ```
 set Dreame_L40 voiceStatus
+set Dreame_L40 volume 10
 ```
 
-Readings: `voice_packet_id`, `voice_change_status`.
+Readings: `voice_packet_id`, `voice_change_status`, `volume`.
 
 Alternativ über MQTT mit JSON:
 
@@ -93,17 +118,41 @@ mosquitto_pub -h 127.0.0.1 -t dreame/L40/set -m \
  '{"command":"installVoicePack","value":{"lang_id":"DECUSTOM","url":"...","md5":"...","size":123}}'
 ```
 
-## Rollback auf Werksstimme
+## Rollback auf die Werksstimme
 
-Siehe Fallstrick 3: es braucht eine gültige URL des offiziellen Sprachpakets.
+Der Roboter lädt Sprachpakete **immer** aus dem Netz (siehe Fallstrick 3), also braucht
+auch der Rollback eine gültige URL. Die offizielle deutsche Paket-URL für `dreame.vacuum.r2492j`
+ist verifiziert (HTTP 200, 8.954.023 Bytes, MD5 lokal nachgerechnet, 515 OGG-Dateien, gleiches
+16-kHz-mono-Format):
 
-```powershell
-python diagnose/set_voicepack.py DE "<offizielle-de-Paket-URL>" "<md5>" <size> --wait
+| Feld | Wert |
+|---|---|
+| URL | `https://oss.iot.dreame.tech/dreame-product/resources/2ee3cc51bef5352957fe4c30b39d5642` |
+| MD5 | `2ee3cc51bef5352957fe4c30b39d5642` |
+| Größe | `8954023` |
+| `lang_id` | `DE` |
+
+Zurück zur Werksstimme – eine Zeile in FHEM:
+
+```
+set Dreame_L40 installVoicePack DE|https://oss.iot.dreame.tech/dreame-product/resources/2ee3cc51bef5352957fe4c30b39d5642|2ee3cc51bef5352957fe4c30b39d5642|8954023
 ```
 
-Das offizielle DE-Paket folgt dem Muster
-`http://awsde0.fds.api.xiaomi.com/dreame-product/<modell>/voices/package/deyu.tar.gz`
-(für `dreame.vacuum.p2009` belegt, für `r2492j` noch nicht gefunden).
+Das Paket liegt zusätzlich als lokale Sicherung unter
+`reference/official-de-r2492j.tar.gz` (nicht im Repo, da Fremdmaterial).
+
+### Das Sprachpaket-Verzeichnis eines Modells
+
+Dreame veröffentlicht pro Modell ein Manifest mit allen verfügbaren Sprachen:
+
+```
+http://awsde0.fds.api.xiaomi.com/dreame-product/dreame.vacuum.r2492j/voices/soundpackage.json
+```
+
+Es enthält je Sprache `id`, `name`, `size`, `md5sum` und `download`. Für andere Modelle
+einfach den Modellcode im Pfad austauschen. Wichtig: bei neuen Modellen (ab `r2xxx`) liegt das
+Paket unter `.../resources/<md5>` – **ohne Sprachcode im Pfad**; das alte Schema
+`.../<modell>/voices/package/deyu.tar.gz` gibt es dort nicht mehr (daher HTTP 404).
 
 ## Bridge-Anpassung
 
@@ -115,7 +164,13 @@ Das offizielle DE-Paket folgt dem Muster
 | `patch_bridge.py` | fügt `installVoicePack` (JSON) und `voiceStatus` hinzu |
 | `patch_bridge_v2.py` | prüft `lang_id`, sichert das Host-Präfix, verfolgt den Fortschritt |
 | `patch_bridge_v3.py` | erlaubt zusätzlich das FHEM-taugliche Pipe-Format |
-| `patch_fhem_setlist.py` | trägt beide Befehle in die `setList` von `Dreame_L40` ein |
+| `patch_bridge_v4.py` | ergänzt den Befehl `volume 0..10` |
+| `patch_fhem_setlist.py` | trägt die Befehle `installVoicePack` und `voiceStatus` in die `setList` ein |
+| `patch_fhem_volume.py` | trägt `volume:0..10` in die `setList` ein |
+
+Bridge-Version nach allen Patches: `3.6-voicepack-fhem`.
+Nach jedem Patch `sudo systemctl restart dreame-fhem.service`, nach den FHEM-Patches
+zusätzlich `rereadcfg` in FHEM.
 
 Jeder Patch legt vorher ein Backup an und prüft die Syntax; bei einem Fehler wird
 automatisch zurückgerollt.
