@@ -3,18 +3,23 @@
 Eigene Ansagen für einen **Dreame L40 Ultra** (`dreame.vacuum.r2492j`), installiert über die
 Dreame-Cloud-API. Der Roboter lädt das Paket selbst herunter, prüft die MD5 und entpackt es.
 
-**Status: am Gerät verifiziert.** Das deutsche Custom-Paket ist installiert und aktiv.
+**Status: am Gerät verifiziert.** Mehrere Sprachpakete sind installierbar und per
+Einzeiler umschaltbar – deutsche Eigenproduktion, fertige englische Charakter-Packs
+(Gordon Ramsay, JARVIS, C-3PO, Bob Ross, Dalek …) und die Werksstimme als Rollback.
 
 ## Ergebnis auf einen Blick
 
 | Was | Wert |
 |---|---|
-| Aktives Sprachpaket | `FULLDE` (466 deutsche Ansagen) |
-| Installationsdauer | ~16 Sekunden nach dem Befehl (8,2 MB) |
+| Umschalten | `set Dreame_L40 voicepack <name>` – ca. 5 s pro Wechsel |
+| Verfügbare Kurznamen | `gordon`, `fullde`, `decustom`, `screamtest`, `factoryde` |
+| Deutsches Eigenpaket | `FULLDE` – 466 Ansagen, 8,2 MB |
+| Englisches Charakter-Pack | `gordon` – 417 Ansagen, 5,5 MB |
+| Installationsdauer | 5 s (5,5 MB) bis 16 s (8,2 MB) |
 | Fortschrittsmeldung | `VOICE_CHANGE_STATUS`: `state=downloading` → `state=success`, `progress=100` |
 | Schrei bei „steckt fest" | Sound-ID 40 (CC0-Wilhelm-Scream, pitch-verschoben) |
 | Lautstärke | 10 von 10 |
-| Rollback-Ziel | offizielles DE-Paket, URL siehe unten (verifiziert) |
+| Rollback-Ziel | offizielles DE-Paket (`factoryde`), URL verifiziert |
 
 ## Wie es funktioniert
 
